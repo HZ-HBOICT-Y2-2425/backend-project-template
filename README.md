@@ -1,4 +1,6 @@
-# Veterinarian
+# Backend example
+
+In this backend example for a project, a folder is created for each micoservice. 
 
 1. Install docker to your system
 2. Run `docker compose up` and you are good to go

@@ -1,14 +1,13 @@
 import express from 'express';
-import { responseExample, updateExample, responseByIdExample } from '../controllers/exampleController.js';
-import { checkName } from '../middleware/exampleMiddleware.js';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 const router = express.Router();
 
-// routes
-router.get('/', (req, res, next) => {
-  res.json('hi');
+// create a proxy for each microservice
+const microserviceProxy = createProxyMiddleware({
+  target: 'http://microservice:3011',
+  changeOrigin: true
 });
-router.get('/example', checkName, responseExample);
-router.post('/example', checkName, updateExample);
-router.get('/example/:id', checkName, responseByIdExample);
+
+router.use('/microservice', microserviceProxy);
 
 export default router;
