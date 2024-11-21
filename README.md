@@ -26,4 +26,4 @@ Check the readme files of each container to understand the setup
 
 ## Docker
 
-There was a error with NPM that comes with the newest version of Node. We downgraded the node:lts to 21.7.3 to include a non-errorrenous npm version. See this [bug report](https://github.com/npm/cli/issues/7900).
+There was an error with NPM that comes with the newest version of Node. We downgraded node:lts to 21.7.3 to include a non-errorrenous npm version. See this [bug report](https://github.com/npm/cli/issues/7900).
