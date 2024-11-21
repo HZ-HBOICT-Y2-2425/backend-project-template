@@ -1,6 +1,6 @@
 services:
   microservice:
-    image: node:lts
+    image: node:21.7.3 
     volumes:
       - ./microservice/code:/usr/src/app
     networks:
@@ -10,7 +10,7 @@ services:
     working_dir: /usr/src/app
     command: bash -c "npm install --no-audit && npm run dev"
   gateway:
-    image: node:lts
+    image: node:21.7.3
     volumes:
       - ./apigateway/code:/usr/src/app
     networks:
